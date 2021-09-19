@@ -1,0 +1,1 @@
+// Roll dice component renders the dice and a button to roll. state is managed in rolldice component and passed thru props to die
