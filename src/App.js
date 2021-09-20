@@ -1,11 +1,10 @@
-// import Die from "./Die";
-import RollDice from "./RollDice";
+import ScoreKeeper from "./ScoreKeeper";
 
 
 function App() {
   return (
     <div className="App">
-      <RollDice />
+     <ScoreKeeper />
     </div>
   );
 }
