@@ -34,7 +34,7 @@ export class RollDice extends Component {
     this.randomNumbers();
     this.setState({
       rolling: true,
-      class: "animate__animated animate__shakeX",
+      class: "animate__animated animate__wobble",
       button: "Rolling..."
     });
     setTimeout(() => {
@@ -49,11 +49,11 @@ export class RollDice extends Component {
   render() {
     return (
       <div className="RollDice">
-        <div className={`${this.state.class} RollDice-dice`}>
-          <Die num={this.state.dice1} />
-          <Die num={this.state.dice2}/>
+        <div className="RollDice-dice">
+          <Die num={this.state.dice1} roll={this.state.class}/>
+          <Die num={this.state.dice2} roll={this.state.class}/>
         </div>
-        <button onClick={this.rolling}>{this.state.button}</button>
+        <button disabled={this.state.rolling} onClick={this.rolling}>{this.state.button}</button>
       </div>
     )
   }

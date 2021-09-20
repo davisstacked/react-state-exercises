@@ -7,3 +7,7 @@
   padding: 0.25em;
   font-size: 10em;
 }
+
+.animate__animated.animate__shakeX {
+  --animate-duration: 2s;
+}
