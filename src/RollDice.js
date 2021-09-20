@@ -11,7 +11,8 @@ export class RollDice extends Component {
     dice1: "one",
     dice2: "one",
     rolling: false,
-    class: ""
+    class: "",
+    button: "Roll Dice",
   };
 
   static defaultProps = {
@@ -33,12 +34,14 @@ export class RollDice extends Component {
     this.randomNumbers();
     this.setState({
       rolling: true,
-      class: "animate__animated animate__shakeX"
+      class: "animate__animated animate__shakeX",
+      button: "Rolling..."
     });
     setTimeout(() => {
       this.setState({
         rolling: false,
-        class: ""
+        class: "",
+        button: "Role Dice"
       })
     }, 2000);
 }
@@ -50,7 +53,7 @@ export class RollDice extends Component {
           <Die num={this.state.dice1} />
           <Die num={this.state.dice2}/>
         </div>
-        <button onClick={this.rolling}>Role Dice</button>
+        <button onClick={this.rolling}>{this.state.button}</button>
       </div>
     )
   }
@@ -58,17 +61,6 @@ export class RollDice extends Component {
 
 export default RollDice;
 
-
-// the roll dice component should have the state for both of the dice.
-// a roll() method that rolls them to randomly get a new result. 
-
-// you can use default props to set an array of six possible faces for each die. 
-
-// your roll method can pick a random element from the array for each die. then update the status. 
-
-// remember that these values will have to be translated into fas fa-dice-one through fas fa-dice-six for the child component to receive the appropriate class name through its props.
-
-// Do you have to store each class name in the array or can you programmatically decide which one the Die components should have?
 
 // Further Study - Animation
 // The solution displays an animation every time the dice are rolled.
