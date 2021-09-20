@@ -4,10 +4,14 @@ import React, { Component } from 'react'
 
 import Die from './Die';
 
+import "./RollDice.css"
+
 export class RollDice extends Component {
   state = {
     dice1: "one",
-    dice2: "one"
+    dice2: "one",
+    rolling: false,
+    class: ""
   };
 
   static defaultProps = {
@@ -18,19 +22,35 @@ export class RollDice extends Component {
     const randOne = Math.floor(Math.random() * this.props.dice.length);
     const randTwo = Math.floor(Math.random() * this.props.dice.length);
     const randIndOne = this.props.dice[randOne];
-    const randIndTwo = this.props.dice[randTwo]
+    const randIndTwo = this.props.dice[randTwo];
     this.setState({
       dice1: randIndOne,
-      dice2: randIndTwo
+      dice2: randIndTwo,
     })
   };
 
+  rolling = () => {
+    this.randomNumbers();
+    this.setState({
+      rolling: true,
+      class: "animate__animated animate__shakeX"
+    });
+    setTimeout(() => {
+      this.setState({
+        rolling: false,
+        class: ""
+      })
+    }, 2000);
+}
+
   render() {
     return (
-      <div>
-        <Die num={this.state.dice1} />
-        <Die num={this.state.dice2}/>
-        <button onClick={this.randomNumbers}>Roll Dice</button>
+      <div className="RollDice">
+        <div className={`${this.state.class} RollDice-dice`}>
+          <Die num={this.state.dice1} />
+          <Die num={this.state.dice2}/>
+        </div>
+        <button onClick={this.rolling}>Role Dice</button>
       </div>
     )
   }

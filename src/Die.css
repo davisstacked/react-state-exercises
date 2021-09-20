@@ -1,4 +1,9 @@
 .Die {
-  height: 250px;
+}
+
+
+.Die-face {
   color: purple;
+  padding: 0.25em;
+  font-size: 10em;
 }

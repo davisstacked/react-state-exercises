@@ -10,13 +10,7 @@ export class Die extends Component {
   render() {
     return (
       <div className="Die">
-        <i className={`fas fa-dice-${this.props.num} fa-7x`}></i>
-        {/* <i class="fas fa-dice-one fa-7x"></i>
-        <i class="fas fa-dice-two fa-7x"></i>
-        <i class="fas fa-dice-three fa-7x"></i>
-        <i class="fas fa-dice-four fa-7x"></i>
-        <i class="fas fa-dice-five fa-7x"></i>
-        <i class="fas fa-dice-six fa-7x"></i> */}
+        <i className={`Die-face fas fa-dice-${this.props.num} fa-7x`}></i>
       </div>
     )
   }
