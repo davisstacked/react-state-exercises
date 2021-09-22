@@ -2,16 +2,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50vh;
+  margin-bottom: .75em;
 }
 
 .LottoBall-ball {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: pink;
-  height: 100px;
-  width: 100px;
+  background-color: tomato;
+  text-align: center;
+  box-sizing: border-box;
+  color: white;
+  height: 3em;
+  padding-top:0.75em;
+  margin-right: 1em;
+  font-size: 1.5em;
+  font-weight: bold;
+  width: 3em;
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;

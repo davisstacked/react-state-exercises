@@ -1,10 +1,11 @@
-import LottoBall from "./LottoBall";
+import Lottery from "./Lottery";
 
 
 function App() {
   return (
     <div className="App">
-     <LottoBall />
+      <Lottery />
+      <Lottery title="Mini Daily" maxNum={10} numBalls={4}/>
     </div>
   );
 }

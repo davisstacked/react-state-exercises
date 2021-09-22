@@ -1,0 +1,10 @@
+.Lottery {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Lottery-balls {
+  display: flex;
+}
