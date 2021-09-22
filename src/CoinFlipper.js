@@ -4,10 +4,36 @@ import React, { Component } from 'react';
 import Coin from './Coin';
 
 export class CoinFlipper extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      heads: true,
+      numOfFlips: 0,
+      numOfHeads: 0,
+      numOfTails: 0
+    }
+    this.handleClick = this.handleClick.bind(this);
+    this.flipCoin = this.flipCoin.bind(this);
+  }
+
+  flipCoin() {
+    const random = Math.floor(Math.random() * 2);
+    random === 0 ? this.setState({ heads: true }) : this.setState({ heads: false });
+  };
+
+  handleClick() {
+    this.flipCoin();
+  };
+
+
   render() {
     return (
       <div>
-        <Coin heads={false}/>
+        <h1>Let's flip a coin!</h1>
+        <Coin heads={this.state.heads} />
+        <button onClick={this.handleClick}>Flip Me!</button>
+        {/* <p>Out of {this.state.numOfFlips}, there have been {this.state.numOfHeads} heads and {this.state.numOfTails} tails.</p> */}
       </div>
     )
   }
