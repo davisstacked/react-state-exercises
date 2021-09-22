@@ -1,10 +1,11 @@
-import CoinFlipper from "./CoinFlipper";
+import ColorBoxContainer from "./ColorBoxExercise/ColorBoxContainer";
+
 
 
 function App() {
   return (
     <div className="App">
-      <CoinFlipper />
+      <ColorBoxContainer />
     </div>
   );
 }
