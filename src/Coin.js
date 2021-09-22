@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+// my functioning solution! 
 const HEADFLIP_API = "https://bjc.edc.org/June2017/bjc-r/img/5-algorithms/img_flipping-a-coin/Heads.png"
 
 const TAILFLIP_API = "https://bjc.edc.org/June2017/bjc-r/img/5-algorithms/img_flipping-a-coin/Tails.png"
