@@ -7,10 +7,15 @@ import React, { Component } from 'react';
 import ColorBox from './ColorBox';
 
 export class ColorBoxContainer extends Component {
+
+  randomColor = () => {
+    let random = Math.floor(Math.random() * this.props.colors.length);
+    return this.props.colors[random];
+  }
   render() {
     return (
       <div>
-        <ColorBox color="rebeccapurple" />
+          <ColorBox />
       </div>
     )
   }
