@@ -1,11 +1,10 @@
-import Lottery from "./Lottery";
+import CoinFlipper from "./CoinFlipper";
 
 
 function App() {
   return (
     <div className="App">
-      <Lottery />
-      <Lottery title="Mini Daily" maxNum={10} numBalls={4}/>
+      <CoinFlipper />
     </div>
   );
 }
