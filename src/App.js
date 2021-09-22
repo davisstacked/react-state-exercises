@@ -1,10 +1,10 @@
-import IconList from "./IconList";
+import LottoBall from "./LottoBall";
 
 
 function App() {
   return (
     <div className="App">
-     <IconList />
+     <LottoBall />
     </div>
   );
 }
