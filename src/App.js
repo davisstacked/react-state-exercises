@@ -1,10 +1,10 @@
-import ScoreKeeper from "./ScoreKeeper";
+import IconList from "./IconList";
 
 
 function App() {
   return (
     <div className="App">
-     <ScoreKeeper />
+     <IconList />
     </div>
   );
 }
