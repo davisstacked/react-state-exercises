@@ -6,16 +6,26 @@
 import React, { Component } from 'react';
 import ColorBox from './ColorBox';
 
+import "./ColorBoxContainer.css"
+
 export class ColorBoxContainer extends Component {
+
+  static defaultProps = {
+    allColors: ["red", "seagreen", "seashell", "darkorchid", "darksalmon", "darkturquoise", "darkskyblue", "yellow", "yellowgreen", "beige", "black", "brown", "gold", "gray", "goldenrod", "green"],
+    numBoxes: 16
+  }
 
   randomColor = () => {
     let random = Math.floor(Math.random() * this.props.colors.length);
     return this.props.colors[random];
   }
   render() {
+    const boxes = Array.from({ length: this.props.numBoxes }).map(
+      (b) => <ColorBox color={this.props.allColors}/>
+    )
     return (
-      <div>
-          <ColorBox />
+      <div className="ColorBoxContainer">
+        {boxes}
       </div>
     )
   }

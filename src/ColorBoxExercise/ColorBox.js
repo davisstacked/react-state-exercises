@@ -5,21 +5,21 @@ import "./ColorBox.css"
 
 export class ColorBox extends Component {
 
-  static defaultProps = {
-    allColors: ["red", "seagreen", "seashell", "darkorchid", "darksalmon", "darkturquoise", "darkskyblue", "yellow", "yellowgreen", "beige", "black", "brown", "gold", "gray", "goldenrod", "green"]
-  }
-
   constructor(props) {
     super(props);
     this.state = {
-      color: choice(this.props.allColors)
+      color: choice(this.props.color)
     }
     this.handleClick = this.handleClick.bind(this);
     this.pickColor = this.pickColor.bind(this);
   }
 
   pickColor() {
-    let newColor = choice(this.props.allColors);
+    let newColor;
+    do {
+      newColor = choice(this.props.color);
+    } while (newColor === this.state.color)
+    
     this.setState({ color: newColor });
   }
 

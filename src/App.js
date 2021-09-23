@@ -1,11 +1,14 @@
-import ColorBox from "./ColorBoxExercise/ColorBox";
+// import ColorBox from "./ColorBoxExercise/ColorBox";
+
+import ColorBoxContainer from "./ColorBoxExercise/ColorBoxContainer";
 
 
 
 function App() {
   return (
     <div className="App">
-      <ColorBox />
+      {/* <ColorBox /> */}
+      <ColorBoxContainer />
     </div>
   );
 }
