@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export const NewBoxForm = () => {
+export const NewBoxForm = (props) => {
 
   const [styles, setStyles] =
     useState({
@@ -11,11 +11,12 @@ export const NewBoxForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    props.addBox(styles)
 
   }
 
   const handleChange = (e) => {
-    setStyles(state => ({...state, [e.target.id]: e.target.value}))
+    setStyles(state => ({...state, [e.target.name]: e.target.value}))
   }
 
   return (
@@ -23,24 +24,24 @@ export const NewBoxForm = () => {
       <h1>Box Maker Thingy</h1>
       <label htmlFor="height">Height</label>
       <input
-        id="height"
         name="height"
         value={styles.height}
         onChange={handleChange}
+        type="text"
       />
       <label htmlFor="width">Width</label>
       <input
-        id="width"
         name="width"
         value={styles.width}
         onChange={handleChange}
+        type="text"
       />
       <label htmlFor="backgroundColor">Background Color</label>
       <input
-        id="backgroundColor"
         name="backgroundColor"
         value={styles.backgroundColor}
         onChange={handleChange}
+        type="text"
       />
       <button>Add a new box!</button>
     </form>
