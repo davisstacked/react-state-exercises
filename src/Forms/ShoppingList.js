@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { ShoppingListForm } from './ShoppingListForm';
+import { v4 as uuid } from "uuid";
 
 export const ShoppingList = () => {
 
-  const [items, setItems] = useState([{ name: 'Milk', qty: "2 gallons" }, { name: "Bread", qty: "2 loaves" }])
+  const [items, setItems] = useState([{ name: 'Milk', id: uuid(), qty: "2 gallons" }, { name: "Bread", id: uuid(), qty: "2 loaves" }])
 
   const addItem = (item) => {
-    setItems(prevState => ([ ...prevState, item ]))
+    let newItem = {...item, id: uuid()}
+    setItems(prevState => ([ ...prevState, newItem ]))
   }
   
   const renderItems = () => {
