@@ -2,17 +2,11 @@ import React, { useState } from 'react'
 
 export const NewBoxForm = (props) => {
 
-  const [styles, setStyles] =
-    useState({
-      height: "",
-      width: "",
-      backgroundColor: ""
-    })
+  const [styles, setStyles] = useState({})
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.addBox(styles)
-
+    props.addBox(styles);
   }
 
   const handleChange = (e) => {
@@ -21,28 +15,33 @@ export const NewBoxForm = (props) => {
 
   return (
     <form className="NewBoxForm" onSubmit={handleSubmit}>
-      <h1>Box Maker Thingy</h1>
-      <label htmlFor="height">Height</label>
-      <input
-        name="height"
-        value={styles.height}
-        onChange={handleChange}
-        type="text"
-      />
-      <label htmlFor="width">Width</label>
-      <input
-        name="width"
-        value={styles.width}
-        onChange={handleChange}
-        type="text"
-      />
-      <label htmlFor="backgroundColor">Background Color</label>
-      <input
-        name="backgroundColor"
-        value={styles.backgroundColor}
-        onChange={handleChange}
-        type="text"
-      />
+      <div>
+        <label htmlFor="height">Height</label>
+        <input
+          name="height"
+          value={styles.height}
+          onChange={handleChange}
+          type="text"
+        />
+      </div>
+      <div>
+        <label htmlFor="width">Width</label>
+        <input
+          name="width"
+          value={styles.width}
+          onChange={handleChange}
+          type="text"
+        />
+      </div>
+      <div>
+        <label htmlFor="backgroundColor">Background Color</label>
+        <input
+          name="backgroundColor"
+          value={styles.backgroundColor}
+          onChange={handleChange}
+          type="text"
+        />
+      </div>
       <button>Add a new box!</button>
     </form>
   )

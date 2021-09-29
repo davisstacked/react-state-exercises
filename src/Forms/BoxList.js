@@ -3,20 +3,32 @@ import { NewBoxForm } from './NewBoxForm';
 import { Box } from './Box';
 import { v4 as uuid } from "uuid";
 
-export const BoxList = () => {
+export const BoxList = (props) => {
 
-  const [styles, setStyles] = useState([{width: "", height: "", backgroundColor: ""}])
+  const [boxes, setBoxes] = useState([])
 
   const addBox = (styles) => {
-    let newBox = { ...styles, id: uuid() }
-    setStyles(state => ([...state, newBox]))
+    let newBox = { ...styles, key: uuid() }
+    setBoxes(box => ([...box, newBox]));
   }
+
+  const renderBoxes = () => {
+    return (
+    <ul>
+      {boxes.map(box => (
+        <Box width={box.width} height={box.height} backgroundColor={box.backgroundColor} />
+      ))}
+      </ul>
+    )
+  }
+  
   return (
     <div>
-      <NewBoxForm addBox={addBox}/>
-      <ul>
-
-      </ul>
+      <h1>Box Maker Thingy</h1>
+      <NewBoxForm addBox={addBox} />
+      <div>
+        {renderBoxes()}
+      </div>
     </div>
   )
 }

@@ -3,8 +3,11 @@ import React from 'react'
 export const Box = (props) => {
 
   return (
-    <div style={{ width: "100px", height: "100px", backgroundColor: "purple" }}>
-      
+    <div>
+      <div style={{ width: `${props.width}px`, height: `${props.height}px`, backgroundColor: props.backgroundColor }}>
+        
+      </div>
+      <button>X</button>
     </div>
   )
 }
