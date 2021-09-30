@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-import { BoxList } from './Forms/BoxList';
-// import { NewBoxForm } from './Forms/NewBoxForm';
-// import { Box } from './Forms/Box';
+import { Todo } from './Todo App/Todo';
 
 export class App extends Component {
   render() {
     return (
       <div>
-        <BoxList />
+        <Todo />
       </div>
     )
   }
