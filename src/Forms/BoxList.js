@@ -8,24 +8,28 @@ export const BoxList = (props) => {
   const [boxes, setBoxes] = useState([])
 
   const addBox = (styles) => {
-    let newBox = { ...styles, key: uuid() }
-    setBoxes(box => ([...box, newBox]));
+    let newBox = { ...styles, key: uuid(), id: uuid()}
+    setBoxes(state => ([...state, newBox]));
   }
 
+  const removeBox = (id) => {
+    setBoxes(boxes.filter(box => box.id !== id))
+  }
   const renderBoxes = () => {
     return (
     <ul>
       {boxes.map(box => (
-        <Box width={box.width} height={box.height} backgroundColor={box.backgroundColor} />
+        <Box remove={() => removeBox(box.id)} key={box.key} id={box.id} width={box.width} height={box.height} backgroundColor={box.backgroundColor} />
       ))}
       </ul>
     )
   }
-  
+
+
   return (
     <div>
       <h1>Box Maker Thingy</h1>
-      <NewBoxForm addBox={addBox} />
+      <NewBoxForm removeBox={removeBox} addBox={addBox} />
       <div>
         {renderBoxes()}
       </div>

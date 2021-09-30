@@ -7,7 +7,7 @@ export const Box = (props) => {
       <div style={{ width: `${props.width}px`, height: `${props.height}px`, backgroundColor: props.backgroundColor }}>
         
       </div>
-      <button>X</button>
+      <button onClick={props.remove}>X</button>
     </div>
   )
 }

@@ -7,6 +7,7 @@ export const NewBoxForm = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     props.addBox(styles);
+    setStyles({height: "", width: "", backgroundColor: ""});
   }
 
   const handleChange = (e) => {
