@@ -4,23 +4,25 @@ import React, { useState } from 'react';
 
 export const NewTodoForm = (props) => {
 
-  const [todo, setTodo] = useState("");
+  const [todo, setTodo] = useState({});
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setTodo('')
+    props.addTodo(todo);
+    setTodo({todo: ''});
   }
 
   const handleChange = (e) => {
-    setTodo(e.target.value)
+    setTodo(state => ({...state, [e.target.name]: e.target.value }))
   }
+
   return (
-    <form onClick={handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <label htmlFor="todo">New Todo</label>
       <input
         onChange={handleChange}
         name="todo"
-        value={todo}
+        value={todo.todo}
         type="text" />
       <button>Add ToDo</button>
     </form>
