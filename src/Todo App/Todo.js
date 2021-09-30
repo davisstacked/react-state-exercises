@@ -5,14 +5,14 @@ import React from 'react';
 
 import './Todo.css'
 
-export const Todo = () => {
+export const Todo = (props) => {
   return (
     <div className="Todo">
-      <h3>Todo</h3>
+      <h3>{props.todo}</h3>
       <button>
         <i class="fas fa-edit"></i>
       </button>
-      <button>
+      <button onClick={props.remove}>
       <i class="fas fa-trash-alt"></i>
       </button>
     </div>

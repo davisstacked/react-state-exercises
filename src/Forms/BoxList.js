@@ -19,7 +19,13 @@ export const BoxList = (props) => {
     return (
     <ul>
       {boxes.map(box => (
-        <Box remove={() => removeBox(box.id)} key={box.key} id={box.id} width={box.width} height={box.height} backgroundColor={box.backgroundColor} />
+        <Box
+          remove={() => removeBox(box.id)}
+          key={box.key}
+          id={box.id}
+          width={box.width}
+          height={box.height}
+          backgroundColor={box.backgroundColor} />
       ))}
       </ul>
     )

@@ -17,8 +17,26 @@ export const TodoList = () => {
     setTodos(todos.filter(todo => todo.id !== id))
   }
 
+  const renderTodos = () => {
+    return (
+      <ul>
+        <li style={{listStyleType: "none"}}>
+          {todos.map(todo => (
+            <Todo
+              remove={() => removeTodo(todo.id)}
+              todo={todo.todo}
+              key={todo.key}
+              id={todo.id}
+            />
+          ))}
+        </li>
+      </ul>
+    )
+  }
+
   return (
     <div>
+      {renderTodos()}
       <NewTodoForm addTodo={addTodo}/>
     </div>
   )
