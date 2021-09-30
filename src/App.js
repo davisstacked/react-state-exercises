@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { Todo } from './Todo App/Todo';
+import { NewTodoForm } from './Todo App/NewTodoForm';
 
 export class App extends Component {
   render() {
     return (
       <div>
-        <Todo />
+        <NewTodoForm />
       </div>
     )
   }
