@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 
 export const NewTodoForm = (props) => {
 
-  const [todo, setTodo] = useState({});
+  const [todo, setTodo] = useState({todo: ''});
 
   const handleSubmit = (e) => {
     e.preventDefault();

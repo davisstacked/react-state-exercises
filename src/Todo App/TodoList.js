@@ -9,7 +9,7 @@ export const TodoList = () => {
   const [todos, setTodos] = useState([]);
 
   const addTodo = (todo) => {
-    const newTodo = {...todo, key: uuid(), id: uuid()}
+    const newTodo = { ...todo, id: uuid() }
     setTodos(state => ([...state, newTodo]))
   }
 
@@ -25,7 +25,7 @@ export const TodoList = () => {
             <Todo
               remove={() => removeTodo(todo.id)}
               todo={todo.todo}
-              key={todo.key}
+              key={todo.id}
               id={todo.id}
             />
           ))}
