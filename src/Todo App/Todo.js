@@ -9,6 +9,16 @@ import './Todo.css'
 export const Todo = (props) => {
 
   const [edit, setEdit] = useState(false);
+  const [task, setTask] = useState('');
+
+  const handleUpdate = (e) => {
+    e.preventDefault();
+    // take new task and pass up to parent.
+  }
+
+  const handleChange = (e) => {
+    setTask(e.target.value)
+  }
 
   const toggleForm = () => {
     setEdit(!edit)
@@ -17,8 +27,14 @@ export const Todo = (props) => {
     if(edit) {
       return (
         <div>
-          <form>
-            <input type="text" />
+          <form onSubmit={handleUpdate}>
+            <input
+              type="text"
+              value={task}
+              name="task"
+              onChange={handleChange}
+            />
+            <button>Save</button>
           </form>
         </div>
       )
