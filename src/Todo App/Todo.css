@@ -1,3 +1,8 @@
 .Todo {
   display: flex;
 }
+
+.completed {
+  color: lightblue;
+  text-decoration: line-through;
+}

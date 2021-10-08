@@ -16,7 +16,10 @@ export const Todo = (props) => {
     // take new task and pass up to parent.
     props.update(props.id, task)
     setEdit(false)
-  
+  }
+
+  const handleToggle = (e) => {
+    props.toggleTodo(props.id)
   }
 
   const handleChange = (e) => {
@@ -44,7 +47,7 @@ export const Todo = (props) => {
     } else {
       return (
         <div className="Todo">
-          <h3>{props.task}</h3>
+          <h3 className={props.completed && 'completed'} onClick={handleToggle}>{props.task}</h3>
           <button onClick={toggleForm}>
             <i className="fas fa-edit"></i>
           </button>
