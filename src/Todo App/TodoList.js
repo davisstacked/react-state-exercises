@@ -17,6 +17,16 @@ export const TodoList = () => {
     setTodos(todos.filter(todo => todo.id !== id))
   }
 
+  const updateTodo = (id, updatedTask) => {
+    const updatedTodos = todos.map(todo => {
+      if (todo.id === id) {
+        return { ...todos, todo: updatedTask }
+      }
+      return todo;
+    });
+    setTodos(updatedTodos)
+  }
+
   const renderTodos = () => {
     return (
       <ul>
@@ -24,7 +34,8 @@ export const TodoList = () => {
           {todos.map(todo => (
             <Todo
               remove={() => removeTodo(todo.id)}
-              todo={todo.todo}
+              update={updateTodo}
+              task={todo.todo}
               key={todo.id}
               id={todo.id}
             />

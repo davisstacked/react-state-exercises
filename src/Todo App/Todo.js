@@ -9,11 +9,14 @@ import './Todo.css'
 export const Todo = (props) => {
 
   const [edit, setEdit] = useState(false);
-  const [task, setTask] = useState('');
+  const [task, setTask] = useState(props.task);
 
   const handleUpdate = (e) => {
     e.preventDefault();
     // take new task and pass up to parent.
+    props.update(props.id, task)
+    setEdit(false)
+  
   }
 
   const handleChange = (e) => {
@@ -34,14 +37,14 @@ export const Todo = (props) => {
               name="task"
               onChange={handleChange}
             />
-            <button>Save</button>
+            <button onClick={handleUpdate}>Save</button>
           </form>
         </div>
       )
     } else {
       return (
         <div className="Todo">
-          <h3>{props.todo}</h3>
+          <h3>{props.task}</h3>
           <button onClick={toggleForm}>
             <i className="fas fa-edit"></i>
           </button>
