@@ -32,7 +32,7 @@ export const Todo = (props) => {
 
     if(edit) {
       return (
-        <div>
+        <div className="Todo">
           <form onSubmit={handleUpdate}>
             <input
               type="text"
@@ -47,13 +47,15 @@ export const Todo = (props) => {
     } else {
       return (
         <div className="Todo">
-          <h3 className={props.completed && 'completed'} onClick={handleToggle}>{props.task}</h3>
-          <button onClick={toggleForm}>
-            <i className="fas fa-edit"></i>
-          </button>
-          <button onClick={props.remove}>
-            <i className="fas fa-trash-alt"></i>
-          </button>
+          <h3 className={props.completed ? 'Todo-task completed' : 'Todo-task'} onClick={handleToggle}>{props.task}</h3>
+          <div className="Todo-buttons">
+            <button onClick={toggleForm}>
+              <i className="fas fa-edit"></i>
+            </button>
+            <button onClick={props.remove}>
+              <i className="fas fa-trash-alt"></i>
+            </button>
+          </div>
         </div>
       )
     }

@@ -4,6 +4,8 @@ import { NewTodoForm } from './NewTodoForm';
 import { Todo } from './Todo';
 import { v4 as uuid } from "uuid";
 
+import './TodoList.css'
+
 export const TodoList = () => {
 
   const [todos, setTodos] = useState([]);
@@ -58,7 +60,8 @@ export const TodoList = () => {
   }
 
   return (
-    <div>
+    <div className="TodoList">
+      <h1>Todo List</h1>
       {renderTodos()}
       <NewTodoForm addTodo={addTodo}/>
     </div>
