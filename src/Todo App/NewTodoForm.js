@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react';
 
+import "./NewTodoForm.css"
+
 export const NewTodoForm = (props) => {
 
   const [todo, setTodo] = useState({todo: ''});
@@ -17,7 +19,7 @@ export const NewTodoForm = (props) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="NewTodoForm" onSubmit={handleSubmit}>
       <label htmlFor="todo">New Todo</label>
       <input
         onChange={handleChange}

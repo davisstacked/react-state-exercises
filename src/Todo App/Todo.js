@@ -33,7 +33,7 @@ export const Todo = (props) => {
     if(edit) {
       return (
         <div className="Todo">
-          <form onSubmit={handleUpdate}>
+          <form className="Todo-edit-form" onSubmit={handleUpdate}>
             <input
               type="text"
               value={task}
