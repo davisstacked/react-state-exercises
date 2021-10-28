@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { TodoList } from './Todo App/TodoList';
+import SWMovies from './LearningHooks/useEffect/SWMovies';
 
 export class App extends Component {
   render() {
     return (
       <div>
-        <TodoList />
+        <SWMovies />
       </div>
     )
   }
