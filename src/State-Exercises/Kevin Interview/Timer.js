@@ -24,15 +24,20 @@ export const Timer = () => {
   return (
     <div>
       <div>
-        {/* we divide it by 100 because when it gets up to 99 we want it to go back to zero */}
-        <span>{(time / 10) % 100}</span>
+        {/* we divide it by 100 because when it gets up to 99 we want it to go back to zero. incrementing by 10 miliseconds so divide by 10 so shows up as 1. */}
+        {/* Minutes */}
+        <span>{("0" + Math.floor((time / 60000) % 60)).slice(-2)}</span>:
+        {/* Seconds */}
+        <span>{("0" + Math.floor((time / 1000) % 60)).slice(-2)}</span>:
+        {/* Milliseconds */}
+        <span>{("0" + ((time / 10) % 100)).slice(-2)}</span>
       </div>
       <div>
         <button onClick={() => setTimerOn(true)}>Start</button>
         <button onClick={() => setTimerOn(false)}>Stop</button>
-        <button onClick={() => setTimerOn(true)}>Resume</button>
-        <button onClick={() => setTime(0)}>Reset</button>
       </div>
     </div>
   )
 }
+
+

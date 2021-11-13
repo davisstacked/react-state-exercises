@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import SWMovies from './LearningHooks/useEffect/SWMovies';
+import NewTimerForm from './State-Exercises/Kevin Interview/NewTimerForm'
 
 export class App extends Component {
   render() {
     return (
       <div>
-        <SWMovies />
+        <NewTimerForm />
       </div>
     )
   }
