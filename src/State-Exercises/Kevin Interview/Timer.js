@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-export const Timer = () => {
+export const Timer = (props) => {
 
   const [time, setTime] = useState(0);
   const [timerOn, setTimerOn] = useState(false);
@@ -24,6 +24,7 @@ export const Timer = () => {
   return (
     <div>
       <div>
+        {props.title}
         {/* we divide it by 100 because when it gets up to 99 we want it to go back to zero. incrementing by 10 miliseconds so divide by 10 so shows up as 1. */}
         {/* Minutes */}
         <span>{("0" + Math.floor((time / 60000) % 60)).slice(-2)}</span>:

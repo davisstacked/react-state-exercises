@@ -4,13 +4,13 @@ import React, { useState } from 'react';
 
 import "./NewTodoForm.css"
 
-export const NewTodoForm = (props) => {
+export const NewTodoForm = ({addTodo}) => {
 
   const [todo, setTodo] = useState({todo: ''});
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.addTodo(todo);
+    addTodo(todo);
     setTodo({todo: ''});
   }
 
